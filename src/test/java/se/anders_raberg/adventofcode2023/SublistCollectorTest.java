@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import se.anders_raberg.adventofcode2022.utilities.SublistCollector;
+import se.anders_raberg.adventofcode2023.utilities.SublistCollector;
 
 class SublistCollectorTest {
 

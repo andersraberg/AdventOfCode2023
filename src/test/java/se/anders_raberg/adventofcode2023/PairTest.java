@@ -5,7 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
-import se.anders_raberg.adventofcode2022.utilities.Pair;
+import se.anders_raberg.adventofcode2023.utilities.Pair;
 
 class PairTest {
 

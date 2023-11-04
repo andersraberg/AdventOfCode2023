@@ -1,4 +1,4 @@
-package se.anders_raberg.adventofcode2022.utilities;
+package se.anders_raberg.adventofcode2023.utilities;
 
 public class ToStringUtilities {
     private ToStringUtilities() {
