@@ -1,7 +1,7 @@
 node {
     git 'https://github.com/andersraberg/AdventOfCode2023.git'
     stage('Build') {
-        sh './gradlew clean build -Pversion=$BUILD_NUMBER --profile'
+        sh './gradlew clean build -Pversion=$BUILD_NUMBER --profile --configuration-cache'
     }
 
     stage('Run') {
