@@ -31,13 +31,13 @@ public class Day1 {
 
     public static void run() throws IOException {
         List<String> lines = Files.readAllLines(Paths.get("inputs/input1.txt"));
-        LOGGER.info("Part 1: " + lines.stream().map(Day1::removeNonDigits).mapToInt(Day1::firstLastToInt).sum());
-        LOGGER.info("Part 2: " + lines.stream().map(Day1::parseSpelledOut).map(Day1::removeNonDigits)
+        LOGGER.info(() -> "Part 1: " + lines.stream().map(Day1::removeNonDigits).mapToInt(Day1::firstLastToInt).sum());
+        LOGGER.info(() -> "Part 2: " + lines.stream().map(Day1::parseSpelledOut).map(Day1::removeNonDigits)
                 .mapToInt(Day1::firstLastToInt).sum());
     }
 
     private static String removeNonDigits(String str) {
-        return str.replaceAll("[^0-9]", "");
+        return str.replaceAll("\\D", "");
     }
 
     private static int firstLastToInt(String str) {

@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
@@ -31,7 +32,7 @@ public class Day2 {
             return drawSet.stream().allMatch(d -> d.drawPossible(r, g, b));
         }
 
-        public long power() {
+        public int power() {
             return drawSet.stream().mapToInt(d -> d.red).max().orElseThrow()
                     * drawSet.stream().mapToInt(d -> d.green).max().orElseThrow()
                     * drawSet.stream().mapToInt(d -> d.blue).max().orElseThrow();
@@ -44,14 +45,14 @@ public class Day2 {
     public static void run() throws IOException {
         Map<Integer, Game> games = Files.readAllLines(Paths.get("inputs/input2.txt")).stream() //
                 .map(Day2::splitLine) //
-                .collect(Collectors.toMap(p -> p.first(), p -> parseGame(p.second())));
+                .collect(Collectors.toMap(Pair::first, p -> parseGame(p.second())));
 
-        LOGGER.info("Part 1: " + games.entrySet().stream() //
+        LOGGER.info(() -> "Part 1: " + games.entrySet().stream() //
                 .filter(g -> g.getValue().gamePossible(12, 13, 14)) //
-                .mapToInt(e -> e.getKey()) //
+                .mapToInt(Entry::getKey) //
                 .sum());
 
-        LOGGER.info("Part 2: " + games.values().stream().mapToLong(g -> g.power()).sum());
+        LOGGER.info(() -> "Part 2: " + games.values().stream().mapToLong(Game::power).sum());
     }
 
     private static Pair<Integer, String> splitLine(String line) {
