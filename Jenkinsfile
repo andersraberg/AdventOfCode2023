@@ -17,7 +17,7 @@ node {
 
     stage('Sonar') {
         withSonarQubeEnv() {
-            sh './gradlew sonarqube -Dsonar.projectKey=AdventofCode2023 -Pversion=$BUILD_NUMBER'
+            sh './gradlew sonar -Dsonar.projectKey=AdventofCode2023 -Pversion=$BUILD_NUMBER'
         }
     }
 
