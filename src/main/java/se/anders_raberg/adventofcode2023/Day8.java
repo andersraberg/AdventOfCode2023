@@ -28,7 +28,7 @@ public class Day8 {
 
 	public static void run() throws IOException {
 		List<String> lines = Files.readAllLines(Paths.get("inputs/input8.txt"));
-		TURNS.addAll(Arrays.asList(lines.get(0).split("")));
+		TURNS.addAll(Arrays.asList(lines.getFirst().split("")));
 
 		for (String string : lines) {
 			Matcher m = PATTERN.matcher(string);
@@ -41,7 +41,7 @@ public class Day8 {
 
 		List<Integer> pathLengths = MAPPING.keySet().stream().filter(k -> k.endsWith("A")).map(Day8::calc).toList();
 
-		long lcm = pathLengths.get(0);
+		long lcm = pathLengths.getFirst();
 		for (int i = 1; i < pathLengths.size(); i++) {
 			lcm = ArithmeticUtils.lcm(lcm, pathLengths.get(i));
 		}

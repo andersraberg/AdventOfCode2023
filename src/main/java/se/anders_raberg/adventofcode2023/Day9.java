@@ -51,10 +51,10 @@ public class Day9 {
 		List<Long> www = list;
 		List<Long> result = new ArrayList<>();
 		while (true) {
-			result.add(0, lastElement(www));
+			result.addFirst(lastElement(www));
 			www = calcNextRow(www);
 			if (www.stream().allMatch(i -> i == 0)) {
-				result.add(0, lastElement(www));
+				result.addFirst(lastElement(www));
 				break;
 			}
 		}
@@ -65,10 +65,10 @@ public class Day9 {
 		List<Long> www = list;
 		List<Long> result = new ArrayList<>();
 		while (true) {
-			result.add(0, firstElement(www));
+			result.addFirst(firstElement(www));
 			www = calcNextRow(www);
 			if (www.stream().allMatch(i -> i == 0)) {
-				result.add(0, firstElement(www));
+				result.addFirst(firstElement(www));
 				break;
 			}
 		}
@@ -80,11 +80,11 @@ public class Day9 {
 	}
 
 	private static <T> T lastElement(List<T> list) {
-		return list.get(list.size() - 1);
+		return list.getLast();
 	}
 
 	private static <T> T firstElement(List<T> list) {
-		return list.get(0);
+		return list.getFirst();
 	}
 
 }

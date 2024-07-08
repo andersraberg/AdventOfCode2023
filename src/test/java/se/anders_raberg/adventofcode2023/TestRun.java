@@ -9,8 +9,6 @@ import org.junit.jupiter.api.Test;
 import se.anders_raberg.adventofcode2023.DaysMain;
 
 class TestRun {
-	DaysMain testee = new DaysMain();
-
 	@Test
 	void testMain() throws IOException {
 		DaysMain.main(null);

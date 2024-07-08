@@ -71,7 +71,7 @@ public class Day3 {
 	}
 
 	private static Set<Coord> genCoordsForPart(int row, int start, int end) {
-		return IntStream.range(start, end).boxed().map(c -> new Coord(c, row)).distinct().collect(Collectors.toSet());
+		return IntStream.range(start, end).boxed().map(c -> new Coord(c, row)).collect(Collectors.toSet());
 	}
 
 	private static Set<Coord> genCoordsForPartBorder(Set<Coord> partCoords) {

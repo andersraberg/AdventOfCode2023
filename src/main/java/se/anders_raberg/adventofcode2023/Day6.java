@@ -28,10 +28,9 @@ public class Day6 {
 	private static long calc(List<Race> races) {
 		return races.stream() //
 				.map(race -> LongStream.rangeClosed(0, race.time()) //
-						.map(t -> (race.time() - t) * t) //
-						.filter(r -> r > race.distance())//
-						.boxed() //
-						.count()) //
+                                .map(t -> (race.time() - t) * t) //
+                                .filter(r -> r > race.distance()) //
+	                        .count()) //
 				.reduce(Math::multiplyExact).orElseThrow();
 	}
 

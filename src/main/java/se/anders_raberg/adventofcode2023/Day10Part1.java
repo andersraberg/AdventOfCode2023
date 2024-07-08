@@ -17,8 +17,8 @@ public class Day10Part1 {
 	}
 
 	private enum Direction {
-		NORTH, SOUTH, WEST, EAST;
-	}
+		NORTH, SOUTH, WEST, EAST
+    }
 
 	private static final Map<Pair<Direction, String>, Direction> NEXT_DIRECTION = new HashMap<>();
 
@@ -50,7 +50,7 @@ public class Day10Part1 {
 
 	public static void run() throws IOException {
 		List<String> lines = Files.readAllLines(Paths.get("inputs/input10.txt"));
-		String[][] grid = new String[lines.size()][lines.get(0).length()];
+		String[][] grid = new String[lines.size()][lines.getFirst().length()];
 
 		for (int y = 0; y < lines.size(); y++) {
 			String[] row = lines.get(y).trim().split("");
@@ -59,8 +59,7 @@ public class Day10Part1 {
 			}
 		}
 
-		Coord startPos = findStart(grid);
-		Coord pos = startPos;
+                Coord pos = findStart(grid);
 		Direction dir = Direction.SOUTH; // From visual inspection of input.
 
 		int stepCounter = 0;

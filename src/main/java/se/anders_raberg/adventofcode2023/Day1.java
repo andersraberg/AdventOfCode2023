@@ -41,7 +41,7 @@ public class Day1 {
     }
 
     private static int firstLastToInt(String str) {
-        return Integer.parseInt(str.substring(0, 1) + str.substring(str.length() - 1));
+        return Integer.parseInt(str.charAt(0) + str.substring(str.length() - 1));
     }
 
     private static String parseSpelledOut(String str) {

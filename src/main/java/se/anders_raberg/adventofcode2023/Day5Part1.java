@@ -12,6 +12,7 @@ import java.util.regex.Pattern;
 
 public class Day5Part1 {
 	private static final Logger LOGGER = Logger.getLogger(Day5Part1.class.getName());
+	//
 	private static final Pattern PATTERN = Pattern.compile("seeds:(.+)" + //
 			"seed-to-soil map:(.+)" + //
 			"soil-to-fertilizer map:(.+)" + //
@@ -20,8 +21,7 @@ public class Day5Part1 {
 			"light-to-temperature map:(.+)" + //
 			"temperature-to-humidity map:(.+)" + //
 			"humidity-to-location map:(.+)" + //
-			"(.+)" + //
-			"", Pattern.DOTALL);
+			"(.+)", Pattern.DOTALL);
 
 	private record MapLine(long destStart, long sourceStart, long range) {
 	}

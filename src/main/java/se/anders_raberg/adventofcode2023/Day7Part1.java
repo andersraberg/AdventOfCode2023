@@ -19,12 +19,12 @@ public class Day7Part1 {
 	private static final Pattern PATTERN = Pattern.compile("(\\w+) (\\d+)");
 
 	private enum Type {
-		FIVE_OF_A_KIND, FOUR_OF_A_KIND, FULL_HOUSE, THREE_OF_KIND, TWO_PAIR, ONE_PAIR, HIGH_CARD;
-	}
+		FIVE_OF_A_KIND, FOUR_OF_A_KIND, FULL_HOUSE, THREE_OF_KIND, TWO_PAIR, ONE_PAIR, HIGH_CARD
+    }
 
 	private enum Card {
-		C2, C3, C4, C5, C6, C7, C8, C9, CT, CJ, CQ, CK, CA;
-	}
+		C2, C3, C4, C5, C6, C7, C8, C9, CT, CJ, CQ, CK, CA
+    }
 
 	private record Hand(List<Card> cards, Integer bid) implements Comparable<Hand> {
 		public static Hand parseHand(String str) {
