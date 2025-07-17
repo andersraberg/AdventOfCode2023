@@ -16,6 +16,15 @@ jacoco {
     applyTo run
 }
 
+jacocoTestReport {
+    reports {
+        xml.required = true
+        html.required = false
+        csv.required = false
+    }
+
+}
+
 dependencies {
     implementation 'com.google.guava:guava:28.1-jre'
     implementation 'org.apache.commons:commons-math3:3.6.1'
