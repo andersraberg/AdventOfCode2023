@@ -10,7 +10,7 @@ node {
     }
     
     stage('Build') {
-        sh 'echo "GRADLE_USER_HOME=${GRADLE_USER_HOME}"
+        sh 'echo "GRADLE_USER_HOME=${GRADLE_USER_HOME}"'
         sh './gradlew clean build -Pversion=$BUILD_NUMBER --profile --configuration-cache --build-cache'
     }
 
