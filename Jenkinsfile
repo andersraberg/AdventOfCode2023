@@ -1,12 +1,10 @@
 node {
+    env.GRADLE_USER_HOME = "${WORKSPACE}/.gradle"
+    
     git 'https://github.com/andersraberg/AdventOfCode2023.git'
 
     dir('../common-catalog') {
         git 'https://github.com/andersraberg/common-catalog.git'
-    }
-
-    environment {
-        GRADLE_USER_HOME = "${WORKSPACE}/.gradle"
     }
     
     stage('Build') {
